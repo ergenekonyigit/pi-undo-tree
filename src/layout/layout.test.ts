@@ -134,4 +134,55 @@ describe("Emacs Undo-Tree 2D Layout Engine", () => {
     expect(lines.length).toBe(10);
     expect(lines.some((l) => l.includes("o") || l.includes("x"))).toBe(true);
   });
+
+  it("renders active branch elements with each theme's text color", () => {
+    const entries: SessionEntry[] = [
+      {
+        type: "message",
+        id: "root",
+        parentId: null,
+        timestamp: "2026-09-08T20:00:00Z",
+        message: { role: "user", content: "Root", timestamp: 1000 },
+      },
+      {
+        type: "message",
+        id: "branchA",
+        parentId: "root",
+        timestamp: "2026-09-08T20:01:00Z",
+        message: { role: "user", content: "Branch A", timestamp: 2000 },
+      },
+      {
+        type: "message",
+        id: "branchB",
+        parentId: "root",
+        timestamp: "2026-09-08T20:02:00Z",
+        message: { role: "user", content: "Branch B", timestamp: 3000 },
+      },
+    ];
+
+    const tree = buildSessionTree(entries, metadata, "branchB");
+    const { canvas } = buildTreeLayout(tree);
+
+    // Dark theme simulation
+    const darkTheme = {
+      name: "dark",
+      fg: (color: string, text: string) =>
+        color === "text" ? `\x1b[38;2;212;212;212m${text}\x1b[39m` : text,
+      bg: (color: string, text: string) => text,
+    };
+    const darkLines = canvas.renderViewport(0, 0, 40, 10, darkTheme);
+    // dark.json defines text as #d4d4d4.
+    expect(darkLines.some((l) => l.includes("\x1b[38;2;212;212;212m"))).toBe(true);
+
+    // Light theme simulation
+    const lightTheme = {
+      name: "light",
+      fg: (color: string, text: string) =>
+        color === "text" ? `\x1b[38;2;31;35;40m${text}\x1b[39m` : text,
+      bg: (color: string, text: string) => text,
+    };
+    const lightLines = canvas.renderViewport(0, 0, 40, 10, lightTheme);
+    // light.json defines text as #1f2328.
+    expect(lightLines.some((l) => l.includes("\x1b[38;2;31;35;40m"))).toBe(true);
+  });
 });

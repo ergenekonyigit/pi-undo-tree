@@ -6,6 +6,8 @@ Transform Pi's session branching (`/tree`, `/fork`) into an intuitive, 2D split-
 
 ![pi-undo-tree demo](demo.gif)
 
+The demo follows a realistic CLI workflow: review a health-check config change, open the undo tree, inspect the diff, move to an alternative branch, and jump to that branch with `Enter`.
+
 ---
 
 ## ✨ Features
