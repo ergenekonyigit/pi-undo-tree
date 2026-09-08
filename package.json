@@ -1,6 +1,6 @@
 {
   "name": "pi-undo-tree",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Emacs-style visual undo-tree for the Pi coding agent",
   "author": "Ergenekon Yiğit",
   "type": "module",
