@@ -1,2 +1,2 @@
-export * from "./src/index.js";
-export { default } from "./src/index.js";
+export * from "./src/index.ts";
+export { default } from "./src/index.ts";

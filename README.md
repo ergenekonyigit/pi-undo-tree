@@ -36,27 +36,26 @@ The demo follows a realistic CLI workflow: review a health-check config change, 
 
 ## 🚀 Installation & Setup
 
-### Local Extension Usage in Pi
-Clone and build the package:
+### Install from npm
+
+```bash
+pi install npm:pi-undo-tree
+```
+
+To try the latest checkout without installing it permanently:
+
+```bash
+pi -e git:github.com/ergenekonyigit/pi-undo-tree
+```
+
+### Development
 
 ```bash
 git clone https://github.com/ergenekonyigit/pi-undo-tree.git
 cd pi-undo-tree
 npm install
-npm run build
-```
-
-To load the extension into Pi:
-
-```bash
-# Register in ~/.pi/agent/settings.json or load directory
-pi -e ./dist/index.js
-```
-
-Or add to your local project's `.pi/extensions/undo-tree.js`:
-
-```javascript
-export { default } from "/path/to/pi-undo-tree/dist/index.js";
+npm test
+pi -e /absolute/path/to/pi-undo-tree
 ```
 
 ---
