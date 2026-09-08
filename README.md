@@ -4,6 +4,8 @@ Interactive Emacs-style visual `undo-tree` extension for [Pi](https://pi.dev).
 
 Transform Pi's session branching (`/tree`, `/fork`) into an intuitive, 2D split-screen visual undo-tree with instant navigation, branch switching, and unified diff preview.
 
+![pi-undo-tree demo](demo.gif)
+
 ---
 
 ## ✨ Features
