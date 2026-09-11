@@ -19,7 +19,8 @@
     "index.ts",
     "README.md",
     "LICENSE",
-    "demo.gif"
+    "demo.gif",
+    "catalog-preview.png"
   ],
   "publishConfig": {
     "access": "public"
@@ -45,7 +46,7 @@
     "extensions": [
       "./index.ts"
     ],
-    "image": "https://cdn.jsdelivr.net/npm/pi-undo-tree@0.1.2/demo.gif"
+    "image": "https://cdn.jsdelivr.net/npm/pi-undo-tree@0.1.2/catalog-preview.png"
   },
   "peerDependencies": {
     "@earendil-works/pi-coding-agent": "*",
