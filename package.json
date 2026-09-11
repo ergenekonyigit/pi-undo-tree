@@ -1,6 +1,6 @@
 {
   "name": "pi-undo-tree",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Emacs-style visual undo-tree for the Pi coding agent",
   "author": "Ergenekon Yiğit",
   "type": "module",
@@ -46,7 +46,7 @@
     "extensions": [
       "./index.ts"
     ],
-    "image": "https://cdn.jsdelivr.net/npm/pi-undo-tree@1.0.0/catalog-preview.png"
+    "image": "https://raw.githubusercontent.com/ergenekonyigit/pi-undo-tree/main/catalog-preview.png"
   },
   "peerDependencies": {
     "@earendil-works/pi-coding-agent": "*",
